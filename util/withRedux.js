@@ -21,13 +21,13 @@ const getOrCreateStore = (initStore, initialState) => {
 
 export default (...args) => (Component) => {
     // First argument is initStore, the rest are redux connect arguments and get passed
-    const [initStore, ...connectArgs] = args
+    const [initStore, ...connectArgs] = args;
 
     const ComponentWithRedux = (props = {}) => {
-        const { store, initialProps, initialState } = props
+        const { store, initialProps, initialState } = props;
 
         // Connect page to redux with connect arguments
-        const ConnectedComponent = connect.apply(null, connectArgs)(Component)
+        const ConnectedComponent = connect.apply(null, connectArgs)(Component);
 
         // Wrap with redux Provider with store
         // Create connected page with initialProps

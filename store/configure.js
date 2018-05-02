@@ -1,9 +1,29 @@
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import thunkMiddleware from 'redux-thunk'
+import { createStore, applyMiddleware, compose } from 'redux';
 import modules from './modules';
+import {composeWithDevTools} from "redux-devtools-extension";
+
+const isDev = process.env.NODE_ENV === 'development';
 
 
-export const initStore = (initialState) => {
-    return createStore(modules, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
+
+const configureStore = (initialState) => {
+    const enhancers = [
+        composeWithDevTools(applyMiddleware())
+    ];
+
+    const store = createStore(modules, initialState, compose(...enhancers));
+
+    if(module.hot) {
+        // module.hot.accept('./modules', () => {
+        //   const nextReducer = require('./modules').default;
+        //   store.replaceReducer(nextReducer);
+        // });
+    }
+    if(module.hot) {
+        module.hot.accept('./modules', () => store.replaceReducer(modules));
+    }
+
+    return store;
 };
+
+export default configureStore;

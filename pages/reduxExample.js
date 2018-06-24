@@ -2,7 +2,7 @@ import React from 'react';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux'
 import WithRoot from '../hoc/WithRoot';
-import { increment, decrement } from '../store/modules/reduxExampleReducer';
+import * as sampleAction from '../core/actions/SampleApi';
 
 class reduxExample extends React.Component{
 
@@ -13,27 +13,41 @@ class reduxExample extends React.Component{
     componentWillUnmount () {
     }
 
-    render () {
-        console.log(this.props);
-        return (
+    successBtnClick(){
+        const { sampleAction } = this.props;
+        sampleAction.asyncCall(1);
+    }
+
+    failBtnClick(){
+        const { sampleAction } = this.props;
+        sampleAction.asyncCall('12/e212');
+    }
+
+    render() {
+        const { count, title, body } = this.props;
+        return(
+            <div>
+                <div>redux status is <span> {count}</span></div>
+                <div>redux body is <span> {body}</span></div>
+                <div>redux title is <span> {title}</span></div>
                 <div>
-                    <span>redux-tesign</span>
-                    <br/>
-                    <span>count : <b>{this.props.number}</b></span>
-                    <br/>
-                    <button onClick={()=>{this.props.increment()}}>number Increase</button>
-                    <button onClick={()=>{this.props.decrement()}}>number Decrease</button>
+                    <button onClick={(e)=>{
+                        this.successBtnClick()}}>apiSuccessCallButtons</button>
+                    <button onClick={(e)=>{
+                        this.failBtnClick()}}>apiFailCallButton</button>
                 </div>
-        )
+            </div>
+        );
     }
 }
 
 export default WithRoot(connect(
     (state) => ({
-        number: state.reduxExampleReducer.number
+        count: state.ReduxSagaExampleReducer.count,
+        body: state.ReduxSagaExampleReducer.body,
+        title: state.ReduxSagaExampleReducer.title
     }),
     (dispatch) => ({
-        increment: bindActionCreators(increment, dispatch),
-        decrement: bindActionCreators(decrement, dispatch)
+        sampleAction: bindActionCreators(sampleAction, dispatch),
     })
 )(reduxExample));

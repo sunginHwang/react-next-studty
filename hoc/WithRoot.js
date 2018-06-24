@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import configure from '../store/configure';
+import configure from '../core/store';
 const WithRoot = (WrappedComponent) => {
     const store = configure();
     return (

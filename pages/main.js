@@ -1,13 +1,8 @@
 import MainContainer from '../container/MainContainer';
+import React from "react";
 
 const main = () => (
-    <div>
-        <span>this is main router</span>
-        <br/>
-        <br/>
-        
-        <MainContainer/>
-    </div>
+    <MainContainer/>
 );
 
 export default main;

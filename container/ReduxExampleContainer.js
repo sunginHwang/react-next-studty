@@ -3,6 +3,7 @@ import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux'
 import WithRoot from '../hoc/WithRoot';
 import * as sampleAction from '../core/actions/SampleApi';
+import stylesheet from '../style/scss/Main.scss';
 
 class ReduxExampleContainer extends React.Component{
 
@@ -27,6 +28,8 @@ class ReduxExampleContainer extends React.Component{
         const { count, title, body } = this.props;
         return(
             <div>
+                <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+
                 <div>redux status is <span> {count}</span></div>
                 <div>redux body is <span> {body}</span></div>
                 <div>redux title is <span> {title}</span></div>

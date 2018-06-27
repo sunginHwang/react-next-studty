@@ -1,14 +1,18 @@
 $blueColor: #78ccdd;
 
 body{
-  background-color: #78ccdd;
+  background-color: #e8e8e8;
 }
 
 button{
-  color: $blueColor;
-  width: 100px;
+  background-color: $blueColor;
+  color: white;
+  width: 200px;
   height: 50px;
   border: none;
+  margin: 15px;
+  border-radius: 3px;
+
 }
 
 .customTag{

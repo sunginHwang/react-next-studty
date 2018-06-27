@@ -12,9 +12,15 @@
   "author": "sunginHwang",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^8.6.4",
     "axios": "^0.18.0",
+    "glob": "^7.1.2",
     "immutable": "^3.8.2",
     "next": "^5.1.0",
+    "node-sass": "^4.9.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^2.1.5",
+    "raw-loader": "^0.5.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
@@ -22,6 +28,7 @@
     "redux-actions": "^2.3.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-saga": "^0.16.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^7.0.3"
   }
 }

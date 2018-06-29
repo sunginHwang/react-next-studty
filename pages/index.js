@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import '../style/scss/Main.scss';
 
 export default () =>
     <div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux'
-import WithRoot from '../hoc/WithRoot';
 import * as sampleAction from '../core/actions/SampleApi';
 import style from '../style/scss/Main.scss';
 
@@ -44,7 +43,8 @@ class ReduxExampleContainer extends React.Component{
     }
 }
 
-export default WithRoot(connect(
+export default
+    connect(
     (state) => ({
         count: state.ReduxSagaExampleReducer.count,
         body: state.ReduxSagaExampleReducer.body,
@@ -53,4 +53,4 @@ export default WithRoot(connect(
     (dispatch) => ({
         sampleAction: bindActionCreators(sampleAction, dispatch),
     })
-)(ReduxExampleContainer));
+)(ReduxExampleContainer);

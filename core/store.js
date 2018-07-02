@@ -1,17 +1,18 @@
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import rootSaga from './sagas';
 
 export function initializeStore (initialState ) {
     const sagaMiddleware = createSagaMiddleware();
-    //const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
     const store = createStore(
         reducers,
-     //   devTools,
-        applyMiddleware(
-            sagaMiddleware
+        composeWithDevTools(
+            applyMiddleware(
+                sagaMiddleware
+            )
         )
     );
     sagaMiddleware.run(rootSaga);

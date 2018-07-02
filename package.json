@@ -12,6 +12,7 @@
   "author": "sunginHwang",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-sass": "^0.2.0",
     "autoprefixer": "^8.6.4",
     "axios": "^0.18.0",
     "css-loader": "^0.28.11",

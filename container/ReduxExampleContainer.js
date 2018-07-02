@@ -25,7 +25,6 @@ class ReduxExampleContainer extends React.Component{
 
     render() {
         const { count, title, body } = this.props;
-        console.log(style);
         return(
             <div>
 

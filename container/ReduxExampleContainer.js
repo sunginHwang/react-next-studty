@@ -34,7 +34,7 @@ class ReduxExampleContainer extends React.Component{
                 <div>
                     <button className={style.tag} onClick={(e)=>{
                         this.successBtnClick()}}>apiSuccessCallButtons</button>
-                    <button onClick={(e)=>{
+                    <button className={style.tag} onClick={(e)=>{
                         this.failBtnClick()}}>apiFailCallButton</button>
                 </div>
             </div>

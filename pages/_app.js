@@ -6,11 +6,12 @@ import { Provider } from 'react-redux'
 class MyApp extends App {
     render () {
         const {Component, pageProps, reduxStore} = this.props
+
         return (
             <Container>
                 <link rel="stylesheet" href="/_next/static/style.css" />
                 <Provider store={reduxStore}>
-                    <Component {...pageProps} />
+                    <Component {...this.props} />
                 </Provider>
             </Container>
         )

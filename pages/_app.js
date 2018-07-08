@@ -4,9 +4,10 @@ import withReduxStore from '../core/lib/with-redux-store'
 import { Provider } from 'react-redux'
 
 class MyApp extends App {
-    render () {
-        const {Component, pageProps, reduxStore} = this.props
 
+    render () {
+        const {Component, pageProps, reduxStore} = this.props;
+        console.log(this.props);
         return (
             <Container>
                 <link rel="stylesheet" href="/_next/static/style.css" />

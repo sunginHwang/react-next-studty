@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Layout from '../component/common/layout/Layout';
+
 import style from '../style/scss/Main.scss';
 
 export default () =>

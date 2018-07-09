@@ -11,15 +11,15 @@ export default () =>
         <Link href='/main?name=sungin'>
             <button className={style.tag}>메인레이아웃 이동</button>
         </Link>
-        <Link href='/reduxExample'>
+        <Link prefetch href='/reduxExample'>
             <button className={style.tag}>리덕스 테스트 연동 테스트</button>
         </Link>
         <Link href='/urlRouterExample?id=sungin'>
             <button className={style.tag}>라우트 연동 테스트 Link 태그</button>
         </Link>
 
-        <a href='/urlRouterExample?id=sungin'>
+        <Link href='/urlRouterExample?id=sungin'>
             <button className={style.tag}>라우트 연동 테스트 a 태그</button>
-        </a>
+        </Link>
 
     </Layout>

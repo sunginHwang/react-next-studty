@@ -7,7 +7,6 @@ class MyApp extends App {
 
     render () {
         const {Component, pageProps, reduxStore} = this.props;
-        console.log(this.props);
         return (
             <Container>
                 <link rel="stylesheet" href="/_next/static/style.css" />

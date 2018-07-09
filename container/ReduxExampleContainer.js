@@ -11,10 +11,6 @@ class ReduxExampleContainer extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            loading: true
-        };
-
     };
     componentDidMount () {
 
@@ -38,7 +34,6 @@ class ReduxExampleContainer extends React.Component{
 
         return(
             <div>
-                <PageLoading loading={this.state.loading}/>
                 <div>redux status is <span> {count}</span></div>
                 <div>redux body is <span> {body}</span></div>
                 <div>redux title is <span> {title}</span></div>

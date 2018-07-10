@@ -10,7 +10,6 @@ Router.onRouteChangeStart = (url) => {
 export default class ReduxExampleContainer extends React.Component {
     constructor(...args) {
         super(...args);
-        console.log('constructor');
         this.state = { pageLoading: true }
     }
 
@@ -19,10 +18,7 @@ export default class ReduxExampleContainer extends React.Component {
     }
 
     loadingComplete() {
-        setTimeout(()=>{
-            this.setState({ pageLoading: false });
-        }, 500);
-
+        setTimeout(()=>{this.setState({ pageLoading: false });}, 500);
     }
 
     render() {
@@ -32,13 +28,10 @@ export default class ReduxExampleContainer extends React.Component {
             <div>
                 <Head>
                     <title>{ this.props.title }</title>
-                    <meta charSet='utf-8' />
-                    <link rel="icon" href="/static/mrhFa.ico" type="icon" />
-                    <meta name='viewport' content='initial-scale=1.0, width=device-width' />
                 </Head>
                 <PageLoading loading={this.state.pageLoading}/>
-
-                {  this.props.children
+                {
+                    this.props.children
                 }
             </div>
         )

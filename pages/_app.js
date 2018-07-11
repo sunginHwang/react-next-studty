@@ -6,8 +6,7 @@ import { Provider } from 'react-redux'
 
 export default withRedux(initializeStore)(class MyApp extends App {
     static async getInitialProps ({ Component, ctx }) {
-        let pageProps = {}
-
+        let pageProps = {};
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps({ ctx })
         }
@@ -16,12 +15,12 @@ export default withRedux(initializeStore)(class MyApp extends App {
     }
 
     render () {
-        const {Component, pageProps, store} = this.props;
+        const {Component, pageProps, store,} = this.props;
 
         return (
             <Container>
                 <Provider store={store}>
-                    <Component {...pageProps} />
+                    <Component {...this.props} />
                 </Provider>
             </Container>
         )

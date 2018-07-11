@@ -8,10 +8,9 @@ import * as sampleAction from '../core/actions/SampleApi';
 import style from '../style/scss/Main.scss';
 
 class reduxExample extends React.Component {
-    static async getInitialProps ({...props}) {
-        await console.log(props);
-        await props.ctx.store.dispatch(sampleAction.asyncCall(2));
-        
+
+    componentDidMount(){
+        this.props.sampleAction.asyncCall(2);
     }
 
     successBtnClick(){
@@ -25,10 +24,8 @@ class reduxExample extends React.Component {
     }
 
     render() {
-        const { count, title, body, users } = this.props;
-        console.log('---2--');
-        console.log(this.props);
-        console.log('---2--');
+        const { count, title, body } = this.props;
+
         return(
         <Layout title='리덕스 페이지'>
             <div>

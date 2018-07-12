@@ -21,8 +21,8 @@ export default () =>
             <button className={style.tag}>라우트 연동 테스트 Link 태그</button>
         </Link>
 
-        <Link href='/urlRouterExample?id=sungin'>
-            <button className={style.tag}>라우트 연동 테스트 a 태그</button>
+        <Link href='/urlWithFunctionComponent?id=sunginFunction'>
+            <button className={style.tag}>라우트 연동 테스트 a 태그 함수형컴포넌트</button>
         </Link>
 
     </Layout>

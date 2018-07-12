@@ -26,9 +26,7 @@ class reduxExample extends React.Component {
 
     render() {
         const { count, title, body } = this.props;
-        console.log('---2--');
-        console.log(this.props);
-        console.log('---2--');
+
         return(
         <Layout title='리덕스 페이지'>
             <div>

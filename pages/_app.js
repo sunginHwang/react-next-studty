@@ -5,15 +5,7 @@ import {initializeStore} from '../core/store'
 import { Provider } from 'react-redux'
 
 export default withRedux(initializeStore)(class MyApp extends App {
-    static async getInitialProps ({ Component, ctx }) {
-        let pageProps = {}
 
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps({ ctx })
-        }
-
-        return { pageProps }
-    }
 
     render () {
         const {Component, pageProps, store} = this.props;

@@ -1,6 +1,5 @@
 import Layout from '../component/common/layout/Layout';
 import React from "react";
-import axios from "axios";
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
@@ -8,10 +7,11 @@ import * as sampleAction from '../core/actions/SampleApi';
 import style from '../style/scss/Main.scss';
 
 class reduxExample extends React.Component {
-    static async getInitialProps ({...props}) {
-        await console.log(props);
-        await props.ctx.store.dispatch(sampleAction.asyncCall(2));
-        
+
+    async componentDidMount(){
+        await console.log('componentDidMount');
+        await this.props.sampleAction.asyncCall(2);
+        await console.log(12);
     }
 
     successBtnClick(){
@@ -25,7 +25,7 @@ class reduxExample extends React.Component {
     }
 
     render() {
-        const { count, title, body, users } = this.props;
+        const { count, title, body } = this.props;
         console.log('---2--');
         console.log(this.props);
         console.log('---2--');

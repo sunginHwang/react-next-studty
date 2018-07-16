@@ -25,4 +25,8 @@ export default () =>
             <button className={style.tag}>라우트 연동 테스트 a 태그 함수형컴포넌트</button>
         </Link>
 
+        <Link href='/dynamicImportExample'>
+            <button className={style.tag}>Dynamic Import Example</button>
+        </Link>
+
     </Layout>
